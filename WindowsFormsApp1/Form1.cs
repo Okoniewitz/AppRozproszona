@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 
 namespace WindowsFormsApp1
@@ -64,8 +65,11 @@ namespace WindowsFormsApp1
                     button_add.Visible = true;
                     label_add.Visible = true;
                     label_add2.Visible = true;
+                    label_add3.Visible = true;
                     textBox_add.Visible = true;
                     textBox_add2.Visible = true;
+                    textBox_add3.Visible = true;
+                    button_remove.Visible = true;
                     dataGridView1.DataSource=Query_DB("select * from test");
                 }
                 catch (Exception ex)
@@ -83,9 +87,19 @@ namespace WindowsFormsApp1
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            Query_DB($"INSERT INTO `test` (`id`, `co`, `ile_szt`) VALUES (NULL, '{textBox_add.Text}', '{textBox_add2.Text}')");
+            Query_DB($"INSERT INTO `test` (`id`, `co`, `ile_szt`,  `owner`) VALUES (NULL, '{textBox_add.Text}', '{textBox_add2.Text}', '{textBox_add3.Text}')");
             textBox_add.Text = "";
             textBox_add2.Text = "";
+            textBox_add3.Text = "";
+            dataGridView1.DataSource = Query_DB("select * from test");
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+            int whatsInIDcell =int.Parse(dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString());
+            button_remove.Text = whatsInIDcell.ToString();
+            Query_DB($"DELETE FROM test WHERE `test`.`id` = {whatsInIDcell}");
+            dataGridView1.DataSource = Query_DB("select * from test");
         }
     }
 }

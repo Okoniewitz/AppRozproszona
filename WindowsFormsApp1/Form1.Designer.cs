@@ -41,6 +41,8 @@
             this.label_add = new System.Windows.Forms.Label();
             this.label_add2 = new System.Windows.Forms.Label();
             this.textBox_add2 = new System.Windows.Forms.TextBox();
+            this.label_add3 = new System.Windows.Forms.Label();
+            this.textBox_add3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,15 +91,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(52, 71);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 71);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(339, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(451, 150);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Visible = false;
             // 
             // button_query
             // 
-            this.button_query.Location = new System.Drawing.Point(100, 227);
+            this.button_query.Location = new System.Drawing.Point(36, 227);
             this.button_query.Name = "button_query";
             this.button_query.Size = new System.Drawing.Size(159, 23);
             this.button_query.TabIndex = 6;
@@ -108,7 +110,7 @@
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(578, 179);
+            this.button_add.Location = new System.Drawing.Point(496, 169);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(61, 23);
             this.button_add.TabIndex = 7;
@@ -119,13 +121,14 @@
             // 
             // button_remove
             // 
-            this.button_remove.Location = new System.Drawing.Point(295, 227);
+            this.button_remove.Location = new System.Drawing.Point(328, 227);
             this.button_remove.Name = "button_remove";
             this.button_remove.Size = new System.Drawing.Size(159, 23);
             this.button_remove.TabIndex = 10;
             this.button_remove.Text = "Usuń element";
             this.button_remove.UseVisualStyleBackColor = true;
             this.button_remove.Visible = false;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
             // textBox_add
             // 
@@ -163,11 +166,31 @@
             this.textBox_add2.TabIndex = 11;
             this.textBox_add2.Visible = false;
             // 
+            // label_add3
+            // 
+            this.label_add3.AutoSize = true;
+            this.label_add3.Location = new System.Drawing.Point(635, 112);
+            this.label_add3.Name = "label_add3";
+            this.label_add3.Size = new System.Drawing.Size(57, 13);
+            this.label_add3.TabIndex = 14;
+            this.label_add3.Text = "Właściciel";
+            this.label_add3.Visible = false;
+            // 
+            // textBox_add3
+            // 
+            this.textBox_add3.Location = new System.Drawing.Point(638, 128);
+            this.textBox_add3.Name = "textBox_add3";
+            this.textBox_add3.Size = new System.Drawing.Size(82, 20);
+            this.textBox_add3.TabIndex = 13;
+            this.textBox_add3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 303);
+            this.Controls.Add(this.label_add3);
+            this.Controls.Add(this.textBox_add3);
             this.Controls.Add(this.label_add2);
             this.Controls.Add(this.textBox_add2);
             this.Controls.Add(this.button_remove);
@@ -204,6 +227,8 @@
         private System.Windows.Forms.Label label_add;
         private System.Windows.Forms.Label label_add2;
         private System.Windows.Forms.TextBox textBox_add2;
+        private System.Windows.Forms.Label label_add3;
+        private System.Windows.Forms.TextBox textBox_add3;
     }
 }
 
