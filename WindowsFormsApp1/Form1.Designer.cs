@@ -205,7 +205,8 @@
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "System zarządzania zasobami firmy";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
