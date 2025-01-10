@@ -35,6 +35,12 @@
             this.label_password = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_query = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_remove = new System.Windows.Forms.Button();
+            this.textBox_add = new System.Windows.Forms.TextBox();
+            this.label_add = new System.Windows.Forms.Label();
+            this.label_add2 = new System.Windows.Forms.Label();
+            this.textBox_add2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,16 +101,74 @@
             this.button_query.Name = "button_query";
             this.button_query.Size = new System.Drawing.Size(159, 23);
             this.button_query.TabIndex = 6;
-            this.button_query.Text = "Zapytaj bazę";
+            this.button_query.Text = "Odśwież";
             this.button_query.UseVisualStyleBackColor = true;
             this.button_query.Visible = false;
             this.button_query.Click += new System.EventHandler(this.button_query_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.Location = new System.Drawing.Point(578, 179);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(61, 23);
+            this.button_add.TabIndex = 7;
+            this.button_add.Text = "Dodaj";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // button_remove
+            // 
+            this.button_remove.Location = new System.Drawing.Point(295, 227);
+            this.button_remove.Name = "button_remove";
+            this.button_remove.Size = new System.Drawing.Size(159, 23);
+            this.button_remove.TabIndex = 10;
+            this.button_remove.Text = "Usuń element";
+            this.button_remove.UseVisualStyleBackColor = true;
+            this.button_remove.Visible = false;
+            // 
+            // textBox_add
+            // 
+            this.textBox_add.Location = new System.Drawing.Point(496, 87);
+            this.textBox_add.Name = "textBox_add";
+            this.textBox_add.Size = new System.Drawing.Size(224, 20);
+            this.textBox_add.TabIndex = 8;
+            // 
+            // label_add
+            // 
+            this.label_add.AutoSize = true;
+            this.label_add.Location = new System.Drawing.Point(493, 71);
+            this.label_add.Name = "label_add";
+            this.label_add.Size = new System.Drawing.Size(75, 13);
+            this.label_add.TabIndex = 9;
+            this.label_add.Text = "Dodaj element";
+            // 
+            // label_add2
+            // 
+            this.label_add2.AutoSize = true;
+            this.label_add2.Location = new System.Drawing.Point(493, 112);
+            this.label_add2.Name = "label_add2";
+            this.label_add2.Size = new System.Drawing.Size(57, 13);
+            this.label_add2.TabIndex = 12;
+            this.label_add2.Text = "Ilość sztuk";
+            // 
+            // textBox_add2
+            // 
+            this.textBox_add2.Location = new System.Drawing.Point(496, 128);
+            this.textBox_add2.Name = "textBox_add2";
+            this.textBox_add2.Size = new System.Drawing.Size(82, 20);
+            this.textBox_add2.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 303);
+            this.Controls.Add(this.label_add2);
+            this.Controls.Add(this.textBox_add2);
+            this.Controls.Add(this.button_remove);
+            this.Controls.Add(this.label_add);
+            this.Controls.Add(this.textBox_add);
+            this.Controls.Add(this.button_add);
             this.Controls.Add(this.button_query);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_password);
@@ -129,6 +193,12 @@
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_query;
+        private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.Button button_remove;
+        private System.Windows.Forms.TextBox textBox_add;
+        private System.Windows.Forms.Label label_add;
+        private System.Windows.Forms.Label label_add2;
+        private System.Windows.Forms.TextBox textBox_add2;
     }
 }
 

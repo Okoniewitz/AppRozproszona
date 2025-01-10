@@ -23,10 +23,11 @@ namespace WindowsFormsApp1
 
         private System.Data.DataTable Query_DB(string query)
         {
-            using (connection)
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
+                    connection.Open();
                     MySqlCommand command = new MySqlCommand(query, connection);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
@@ -42,13 +43,12 @@ namespace WindowsFormsApp1
             }
         }
 
-        private static MySqlConnection connection;
         private void button_connect_Click(object sender, EventArgs e)
         {
             connectionString = $"server=localhost;database=Project;uid={textBox_login.Text};";
             //if(textBox_password.Text.Length > 0)
             //connectionString += $"pwd={textBox_password.Text};";
-            using (connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
@@ -74,6 +74,13 @@ namespace WindowsFormsApp1
         private void button_query_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource=Query_DB("select * from test");
+        }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            Query_DB($"INSERT INTO `test` (`id`, `co`, `ile_szt`) VALUES (NULL, '{textBox_add.Text}', '{textBox_add2.Text}')");
+            textBox_add.Text = "";
+            textBox_add2.Text = "";
         }
     }
 }
