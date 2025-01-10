@@ -46,14 +46,14 @@ namespace WindowsFormsApp1
         private void button_connect_Click(object sender, EventArgs e)
         {
             connectionString = $"server=localhost;database=Project;uid={textBox_login.Text};";
-            //if(textBox_password.Text.Length > 0)
-            //connectionString += $"pwd={textBox_password.Text};";
+            if(textBox_password.Text.Length > 0)
+            connectionString += $"pwd={textBox_password.Text};";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    MessageBox.Show($"Połączenie nawiązane pomyślnie!\nConnection string: {connectionString}");
+                    MessageBox.Show($"Połączenie nawiązane pomyślnie!");
                     label_login.Visible = false;
                     label_password.Visible = false;
                     textBox_password.Visible=false;
@@ -61,11 +61,16 @@ namespace WindowsFormsApp1
                     button_connect.Visible=false;
                     dataGridView1.Visible = true;
                     button_query.Visible = true;
+                    button_add.Visible = true;
+                    label_add.Visible = true;
+                    label_add2.Visible = true;
+                    textBox_add.Visible = true;
+                    textBox_add2.Visible = true;
                     dataGridView1.DataSource=Query_DB("select * from test");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Błąd połączenia: {ex.Message} \nConnection string: {connectionString}");
+                    MessageBox.Show($"Błąd połączenia: {ex.Message}");
                 }
             }
 

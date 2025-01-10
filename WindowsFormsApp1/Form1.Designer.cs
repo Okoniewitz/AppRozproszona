@@ -91,7 +91,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(52, 71);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(418, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(339, 150);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Visible = false;
             // 
@@ -114,6 +114,7 @@
             this.button_add.TabIndex = 7;
             this.button_add.Text = "Dodaj";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Visible = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // button_remove
@@ -132,6 +133,7 @@
             this.textBox_add.Name = "textBox_add";
             this.textBox_add.Size = new System.Drawing.Size(224, 20);
             this.textBox_add.TabIndex = 8;
+            this.textBox_add.Visible = false;
             // 
             // label_add
             // 
@@ -141,6 +143,7 @@
             this.label_add.Size = new System.Drawing.Size(75, 13);
             this.label_add.TabIndex = 9;
             this.label_add.Text = "Dodaj element";
+            this.label_add.Visible = false;
             // 
             // label_add2
             // 
@@ -150,6 +153,7 @@
             this.label_add2.Size = new System.Drawing.Size(57, 13);
             this.label_add2.TabIndex = 12;
             this.label_add2.Text = "Ilość sztuk";
+            this.label_add2.Visible = false;
             // 
             // textBox_add2
             // 
@@ -157,6 +161,7 @@
             this.textBox_add2.Name = "textBox_add2";
             this.textBox_add2.Size = new System.Drawing.Size(82, 20);
             this.textBox_add2.TabIndex = 11;
+            this.textBox_add2.Visible = false;
             // 
             // Form1
             // 
