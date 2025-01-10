@@ -33,6 +33,9 @@
             this.button_connect = new System.Windows.Forms.Button();
             this.label_login = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_query = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_login
@@ -77,11 +80,33 @@
             this.label_password.TabIndex = 4;
             this.label_password.Text = "Hasło";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(52, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(418, 150);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.Visible = false;
+            // 
+            // button_query
+            // 
+            this.button_query.Location = new System.Drawing.Point(100, 227);
+            this.button_query.Name = "button_query";
+            this.button_query.Size = new System.Drawing.Size(159, 23);
+            this.button_query.TabIndex = 6;
+            this.button_query.Text = "Zapytaj bazę";
+            this.button_query.UseVisualStyleBackColor = true;
+            this.button_query.Visible = false;
+            this.button_query.Click += new System.EventHandler(this.button_query_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 303);
+            this.Controls.Add(this.button_query);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_login);
             this.Controls.Add(this.button_connect);
@@ -89,6 +114,7 @@
             this.Controls.Add(this.textBox_login);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +127,8 @@
         private System.Windows.Forms.Button button_connect;
         private System.Windows.Forms.Label label_login;
         private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_query;
     }
 }
 

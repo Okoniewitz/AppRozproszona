@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private string connectionString = "Server=193.106.130.55;Database=Project;";
+        private string connectionString;
         public Form1()
         {
             InitializeComponent();
@@ -23,17 +23,16 @@ namespace WindowsFormsApp1
 
         private System.Data.DataTable Query_DB(string query)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (connection)
             {
                 try
                 {
-                    connection.Open();
                     MySqlCommand command = new MySqlCommand(query, connection);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
-                    return dataTable;
                     //dataGridView1.DataSource = dataTable; // Wyświetlanie danych w DataGridView
+                    return dataTable;
                 }
                 catch (Exception ex)
                 {
@@ -43,27 +42,38 @@ namespace WindowsFormsApp1
             }
         }
 
+        private static MySqlConnection connection;
         private void button_connect_Click(object sender, EventArgs e)
         {
-            connectionString+= $"Uid = {textBox_login}; Pwd = {textBox_password}";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            connectionString = $"server=localhost;database=Project;uid={textBox_login.Text};";
+            //if(textBox_password.Text.Length > 0)
+            //connectionString += $"pwd={textBox_password.Text};";
+            using (connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    MessageBox.Show("Połączenie nawiązane pomyślnie!");
+                    MessageBox.Show($"Połączenie nawiązane pomyślnie!\nConnection string: {connectionString}");
                     label_login.Visible = false;
                     label_password.Visible = false;
                     textBox_password.Visible=false;
                     textBox_login.Visible=false;
                     button_connect.Visible=false;
+                    dataGridView1.Visible = true;
+                    button_query.Visible = true;
+                    dataGridView1.DataSource=Query_DB("select * from test");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Błąd połączenia: {ex.Message}");
+                    MessageBox.Show($"Błąd połączenia: {ex.Message} \nConnection string: {connectionString}");
                 }
             }
 
+        }
+
+        private void button_query_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource=Query_DB("select * from test");
         }
     }
 }
